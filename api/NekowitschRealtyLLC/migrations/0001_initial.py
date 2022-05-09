@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Address',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('street', models.CharField(max_length=200)),
                 ('city', models.CharField(max_length=200)),
                 ('state', models.CharField(max_length=200)),
@@ -25,7 +26,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Animal',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('type', models.CharField(max_length=20)),
                 ('name', models.CharField(max_length=100)),
                 ('color', models.CharField(max_length=20)),
@@ -35,15 +37,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='AnimalLookUp',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('owner_id', models.IntegerField()),
-                ('animal', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apiapp.address')),
+                ('animal', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.address')),
             ],
         ),
         migrations.CreateModel(
             name='Vehicle',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('make', models.CharField(max_length=20)),
                 ('model', models.CharField(max_length=20)),
                 ('license_plate', models.CharField(max_length=20)),
@@ -53,9 +58,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VehicleLookUp',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('owner_id', models.IntegerField()),
-                ('vehicle', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apiapp.vehicle')),
+                ('vehicle', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.vehicle')),
             ],
         ),
         migrations.CreateModel(
@@ -72,15 +79,19 @@ class Migration(migrations.Migration):
                 ('email', models.CharField(max_length=100)),
                 ('has_vehicle', models.BooleanField()),
                 ('has_pets', models.BooleanField()),
-                ('rent_per_month', models.DecimalField(decimal_places=2, max_digits=6)),
+                ('rent_per_month', models.DecimalField(
+                    decimal_places=2, max_digits=6)),
                 ('active', models.BooleanField(verbose_name=False)),
                 ('tenancy_start_date', models.DateField()),
                 ('tenancy_end_date', models.DateField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('address', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apiapp.address')),
-                ('pets', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apiapp.animallookup')),
-                ('vehicles', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apiapp.vehiclelookup')),
+                ('address', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.address')),
+                ('pets', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.animallookup')),
+                ('vehicles', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.vehiclelookup')),
             ],
         ),
     ]

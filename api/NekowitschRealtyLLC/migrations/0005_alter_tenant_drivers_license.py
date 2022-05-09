@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('apiapp', '0004_alter_tenant_id'),
+        ('NekowitschRealtyLLC', '0004_alter_tenant_id'),
     ]
 
     operations = [

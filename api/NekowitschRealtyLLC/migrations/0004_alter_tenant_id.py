@@ -6,13 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('apiapp', '0003_alter_address_options_alter_animal_options_and_more'),
+        ('NekowitschRealtyLLC', '0003_alter_address_options_alter_animal_options_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='tenant',
             name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
         ),
     ]

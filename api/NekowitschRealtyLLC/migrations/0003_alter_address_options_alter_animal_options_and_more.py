@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('apiapp', '0002_alter_tenant_options'),
+        ('NekowitschRealtyLLC', '0002_alter_tenant_options'),
     ]
 
     operations = [
@@ -34,12 +34,14 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='animallookup',
             name='animal',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apiapp.animal'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.animal'),
         ),
         migrations.AlterField(
             model_name='tenant',
             name='address',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='apiapp.address'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.address'),
         ),
         migrations.AlterField(
             model_name='tenant',
@@ -49,7 +51,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='tenant',
             name='pets',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='apiapp.animallookup'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.animallookup'),
         ),
         migrations.AlterField(
             model_name='tenant',
@@ -74,6 +77,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='tenant',
             name='vehicles',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='apiapp.vehiclelookup'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='NekowitschRealtyLLC.vehiclelookup'),
         ),
     ]
