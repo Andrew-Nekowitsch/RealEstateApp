@@ -6,8 +6,6 @@ import darkTheme from '../styles/theme/darkTheme';
 
 import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import ThemeToggle from '../components/ThemeToggle';
 import AppBar from '../components/AppBar';
 
 export default function App() {

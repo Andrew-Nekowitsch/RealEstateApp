@@ -8,14 +8,13 @@ type Props = { theme: boolean; setTheme: any };
 
 export default function ThemeToggle({ theme, setTheme }: Props) {
 	const icon = theme ? <Brightness3Icon /> : <Brightness7Icon />;
+
 	return (
-		<>
-			<Typography>
-				Theme
-				<IconButton edge='end' color='inherit' aria-label='mode' onClick={() => setTheme(!theme)}>
-					{icon}
-				</IconButton>
-			</Typography>
-		</>
+		<Typography>
+			Theme
+			<IconButton edge='end' color='default' aria-label='mode' onClick={() => setTheme(!theme)}>
+				{icon}
+			</IconButton>
+		</Typography>
 	);
 }

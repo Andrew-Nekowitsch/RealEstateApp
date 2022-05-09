@@ -17,6 +17,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import ThemeToggle from './ThemeToggle';
+import Link from 'next/link';
 
 const pages = ['Pay Rent'];
 const accountSettings = ['Profile', 'Account', 'Logout'];
@@ -53,11 +54,13 @@ const ResponsiveAppBar = ({ theme, setTheme }: Props) => {
 	};
 
 	const list = () => (
-		<Box sx={{ width: 250 }} role='presentation' onClick={toggleDrawer()} onKeyDown={toggleDrawer()}>
+		<Box sx={{ width: 250 }} role='presentation'>
 			<List sx={{ display: { md: 'none' } }}>
 				{pages.map((text, index) => (
 					<ListItem button key={text}>
-						<ListItemText primary={text} />
+						<Link href={'/' + text.toLowerCase().replaceAll(' ', '')}>
+							<ListItemText primary={text} />
+						</Link>
 					</ListItem>
 				))}
 			</List>
@@ -133,7 +136,8 @@ const ResponsiveAppBar = ({ theme, setTheme }: Props) => {
 							<Button
 								key={page}
 								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: 'white', display: 'block' }}>
+								sx={{ my: 2, color: 'white', display: 'block' }}
+								href={'/' + page.toLowerCase().replaceAll(' ', '')}>
 								{page}
 							</Button>
 						))}
