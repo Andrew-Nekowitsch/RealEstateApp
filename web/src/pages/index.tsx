@@ -5,8 +5,10 @@ import lightTheme from '../styles/theme/lightTheme';
 import darkTheme from '../styles/theme/darkTheme';
 
 import React, { useState } from 'react';
-import { ThemeProvider } from '@mui/material';
+import { Card, ThemeProvider } from '@mui/material';
 import AppBar from '../components/AppBar';
+import SelectDate from '../components/SelectDate';
+import GoogleSignIn from '../components/GoogleSignIn';
 
 export default function App() {
 	const [theme, setTheme] = useState(true);
@@ -18,6 +20,10 @@ export default function App() {
 			</Head>
 
 			<AppBar theme={theme} setTheme={setTheme} />
+			<Card sx={{ minWidth: 120, maxWidth: 500 }}>
+				<SelectDate></SelectDate>
+				<GoogleSignIn></GoogleSignIn>
+			</Card>
 		</ThemeProvider>
 	);
 }

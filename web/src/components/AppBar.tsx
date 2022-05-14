@@ -43,16 +43,6 @@ const ResponsiveAppBar = ({ theme, setTheme }: Props) => {
 		setAnchorElUser(null);
 	};
 
-	const toggleDrawer = () => (event: React.KeyboardEvent<HTMLElement> | React.MouseEvent<HTMLElement>) => {
-		if (
-			event.type === 'keydown' &&
-			((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
-		) {
-			return;
-		}
-		handleCloseNavMenu();
-	};
-
 	const list = () => (
 		<Box sx={{ width: 250 }} role='presentation'>
 			<List sx={{ display: { md: 'none' } }}>
